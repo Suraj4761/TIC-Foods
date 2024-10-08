@@ -10,7 +10,7 @@ import Shopbycategory from "../components/shopbycategory/shopbycategory"
 export default function Home() {
   return (
 
-    <div>
+    <div >
       <Header />
       <FullWidthCarousel />
       <Shopbycategory/>

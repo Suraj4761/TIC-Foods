@@ -1,52 +1,56 @@
 "use client"
 import React from 'react'
-import { Carousel } from "react-bootstrap"
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const BannerPost = () => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+      };
+
+      const ads = [
+        {
+          id: 1,
+          imageUrl: 'C:\Users\aksha\OneDrive\Desktop\TIC-Foods\tic-foods\src\Images\WhatsApp_Image_2024-04-21_at_14.05.09_c323b5e4.webp',
+          title: 'Delicious Indian Cuisine',
+          description: 'Enjoy the best flavors from India!',
+        },
+        {
+          id: 2,
+          imageUrl: 'https://images.unsplash.com/photo-1567518038075-d64f13e6e4c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDMyfHxpbnNpZGV8ZW58MHx8fHwxNjcwMzQyMTEx&ixlib=rb-4.0.3&q=80&w=1920',
+          title: 'Spicy Indian Delights',
+          description: 'Taste the spice of life!',
+        },
+        {
+          id: 3,
+          imageUrl: 'https://images.unsplash.com/photo-1587656458652-c0c2b482fa7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDE3fHxpbnNpZGV8ZW58MHx8fHwxNjcwMzQyMTEx&ixlib=rb-4.0.3&q=80&w=1920',
+          title: 'Authentic Indian Flavors',
+          description: 'A taste of tradition!',
+        },
+      ];
     return (
-        <div id="default-carousel" className="w-full" data-carousel="slide">
-            <h6>hoi</h6>
-            <div className="relative h-56  rounded-lg md:h-96">
-                <div className=" duration-700 ease-in-out" data-carousel-item>
-                    <img src="C:\Users\aksha\OneDrive\Desktop\TIC-Foods\tic-foods\src\Images\WhatsApp_Image_2024-04-21_at_14.05.09_c323b5e4.webp" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
-                </div>
-                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="/docs/images/carousel/carousel-2.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
-                </div>
-                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="/docs/images/carousel/carousel-3.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
-                </div>
-                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="/docs/images/carousel/carousel-4.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
-                </div>
-                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="/docs/images/carousel/carousel-5.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."/>
-                </div>
+        <div className="w-full bg-black text-white">
+        <Slider {...settings}>
+          {ads.map((ad) => (
+            <div key={ad.id} className="relative w-full h-[60vh] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${ad.imageUrl})` }}>
+              <div className="bg-black bg-opacity-50 p-6 rounded-lg text-center">
+                <h2 className="text-4xl md:text-5xl font-bold mb-2">{ad.title}</h2>
+                <p className="text-lg md:text-xl mb-4">{ad.description}</p>
+                <button className="bg-purple-600 hover:bg-purple-800 text-white font-semibold py-2 px-4 rounded-lg transition-all">
+                  Learn More
+                </button>
+              </div>
             </div>
-            <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                <button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-            </div>
-            <button type="button" className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
-                    </svg>
-                    <span className="sr-only">Previous</span>
-                </span>
-            </button>
-            <button type="button" className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-                    </svg>
-                    <span className="sr-only">Next</span>
-                </span>
-            </button>
-        </div>
+          ))}
+        </Slider>
+      </div>
     )
 }
 

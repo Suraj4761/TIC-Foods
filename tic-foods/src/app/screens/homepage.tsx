@@ -8,7 +8,7 @@ import {Menu} from "../helpers/dummy"
 export default function Home() {
   return (
 
-    <div>
+    <div >
       <Header />
       <FullWidthCarousel />
       <Listing menuItems={Menu} />

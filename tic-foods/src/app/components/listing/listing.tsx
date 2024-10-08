@@ -23,7 +23,7 @@ const Listing = (props: any) => {
     <>
       {/* Animated Scroll Listing */}
       <div className="bg-white bg-opacity-50 py-10">
-        <h2 className="text-center text-3xl font-bold font-serif mb-10 text-orange-500">
+        <h2 className="text-center text-3xl font-bold font-serif mb-10 mt-10 text-orange-500">
           Our Products
         </h2>
 

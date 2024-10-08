@@ -4,17 +4,17 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 const Footer = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  // const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsMobile(window.innerWidth < 768);
+  //   };
 
-    window.addEventListener('resize', handleResize);
+  //   window.addEventListener('resize', handleResize);
     
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
 
   return (
     <footer className="bg-gray-900 text-white py-10">
@@ -80,9 +80,9 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className={isMobile ? "w-full px-3 py-2 mb-2 rounded-lg text-gray-800 focus:outline-none": "w-full px-3 py-2 rounded-lg  md:mb-0 md:rounded-l-lg md:rounded-none text-gray-800 focus:outline-none"}
+              className={false ? "w-full px-3 py-2 mb-2 rounded-lg text-gray-800 focus:outline-none": "w-full px-3 py-2 rounded-lg  md:mb-0 md:rounded-l-lg md:rounded-none text-gray-800 focus:outline-none"}
             />
-            <button className={isMobile ? "bg-yellow-500 px-3 py-2 rounded-lg hover:bg-yellow-600 w-full md:w-auto": "bg-yellow-500 px-3 py-2 rounded-lg md:rounded-r-lg md:rounded-none hover:bg-yellow-600 w-full md:w-auto"}>
+            <button className={false ? "bg-yellow-500 px-3 py-2 rounded-lg hover:bg-yellow-600 w-full md:w-auto": "bg-yellow-500 px-3 py-2 rounded-lg md:rounded-r-lg md:rounded-none hover:bg-yellow-600 w-full md:w-auto"}>
               Subscribe
             </button>
           </form>

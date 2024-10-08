@@ -2,6 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import {
+  MagnifyingGlassIcon,
+  UserIcon,
+  HeartIcon,
+  ShoppingCartIcon,
+} from "@heroicons/react/24/outline";
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -12,37 +19,68 @@ const Header = () => {
   return (
     <>
       {/* Header */}
-      <header className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md sticky top-0 z-50">
+      <header className="bg-gradient-to-r from-pink-600 to-yellow-500 text-white shadow-md sticky top-0 z-50">
         <nav className="container mx-auto flex items-center justify-between p-4">
           {/* Logo */}
           <div className="text-2xl font-bold tracking-wide font-serif">
-            <Link href="/">
-              <span className="hover:text-gray-300">TIC</span>
+            <Link href="">
+              <span className="hover:text-gray-300 cursor-default">
+                {" "}
+                {/* Set cursor to default */}
+                TIC
+              </span>
             </Link>
             <p className="text-sm font-light italic text-gray-200">
-              Testing Indian Cuisine
+              Tasty Indian Cuisine
             </p>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center text-lg font-sans">
-            <Link href="/" className="hover:text-gray-300 font-medium">
+            <Link
+              href=""
+              className="hover:text-gray-300 hover:underline font-medium"
+            >
               Home
             </Link>
-            <Link href="/about" className="hover:text-gray-300 font-medium">
-              About
+            <Link
+              href=""
+              className="hover:text-gray-300 hover:underline font-medium"
+            >
+              Shop
             </Link>
-            <Link href="/services" className="hover:text-gray-300 font-medium">
-              Services
+            <Link
+              href=""
+              className="hover:text-gray-300 hover:underline font-medium"
+            >
+              Business
             </Link>
-            <Link href="/contact" className="hover:text-gray-300 font-medium">
-              Contact
+            <Link
+              href=""
+              className="hover:text-gray-300 hover:underline font-medium"
+            >
+              More
             </Link>
+            {/* Icons for Search, Login, Wishlist, Cart */}
+            <div className="flex space-x-6">
+              <Link href="" className="hover:text-gray-300">
+                <MagnifyingGlassIcon className="w-6 h-6" />
+              </Link>
+              <Link href="" className="hover:text-gray-300">
+                <UserIcon className="w-6 h-6" />
+              </Link>
+              <Link href="" className="hover:text-gray-300">
+                <HeartIcon className="w-6 h-6" />
+              </Link>
+              <Link href="" className="hover:text-gray-300">
+                <ShoppingCartIcon className="w-6 h-6" />
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Hamburger Menu */}
-          <div className="md:hidden">
-            <button onClick={toggleMenu} className="focus:outline-none">
+          <div className="md:hidden ">
+            <button onClick={toggleMenu} className="focus:outline-none ">
               <svg
                 className="w-8 h-8"
                 fill="none"
@@ -63,37 +101,42 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-indigo-600 shadow-lg">
+          <div className="bg-gradient-to-r from-indigo-600 to-yellow-600 text-white shadow-md sticky top-0 z-50">
             <nav className="p-4 space-y-4 text-lg font-serif">
-              <Link href="/" className="block text-white hover:text-gray-300">
+              <Link href="" className="block text-white hover:text-gray-300">
                 Home
               </Link>
-              <Link
-                href="/about"
-                className="block text-white hover:text-gray-300"
-              >
-                About
+              <Link href="" className="block text-white hover:text-gray-300">
+                Shop
               </Link>
-              <Link
-                href="/services"
-                className="block text-white hover:text-gray-300"
-              >
-                Services
+              <Link href="" className="block text-white hover:text-gray-300">
+                Business
               </Link>
-              <Link
-                href="/contact"
-                className="block text-white hover:text-gray-300"
-              >
-                Contact
+              <Link href="" className="block text-white hover:text-gray-300">
+                More
               </Link>
+              {/* Mobile Icons for Search, Login, Wishlist, Cart */}
+              <div className="flex space-x-4 pt-2">
+                <Link href="" className="block text-white hover:text-gray-300">
+                  <MagnifyingGlassIcon className="w-6 h-6" />
+                </Link>
+                <Link href="" className="block text-white hover:text-gray-300">
+                  <UserIcon className="w-6 h-6" />
+                </Link>
+                <Link href="" className="block text-white hover:text-gray-300">
+                  <HeartIcon className="w-6 h-6" />
+                </Link>
+                <Link href="" className="block text-white hover:text-gray-300">
+                  <ShoppingCartIcon className="w-6 h-6" />
+                </Link>
+              </div>
             </nav>
           </div>
         )}
       </header>
 
       {/* Full-Screen Banner Section */}
-     
-      <section className="relative w-full h-screen bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1556742400-b5c9d5d9a9af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGluZGlhbiUyMGN1aXNpbmV8ZW58MHx8fHwxNjcwMzM2MDYy&ixlib=rb-4.0.3&q=80&w=1920')] flex items-center justify-center text-white">
+      {/* <section className="relative w-full h-screen bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1556742400-b5c9d5d9a9af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGluZGlhbiUyMGN1aXNpbmV8ZW58MHx8fHwxNjcwMzM2MDYy&ixlib=rb-4.0.3&q=80&w=1920')] flex items-center justify-center text-white">
         <div className="bg-black bg-opacity-60 p-8 rounded-lg text-center animate-fadeIn shadow-lg">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-4 font-serif animate-slideIn">
             Welcome to TIC
@@ -105,13 +148,9 @@ const Header = () => {
             Explore Menu
           </button>
         </div>
-      </section>
-
-     
+      </section> */}
     </>
   );
 };
-
-
 
 export default Header;

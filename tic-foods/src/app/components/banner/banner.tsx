@@ -4,9 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Button } from "react-bootstrap";
 
-const FullWidthCarousel = (props:any) => {
+const FullWidthCarousel = (props: any) => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -18,37 +18,36 @@ const FullWidthCarousel = (props:any) => {
   const ads = [
     {
       id: 1,
-      imageUrl:
-        "https://images.unsplash.com/photo-1517511620798-4a03d189f2b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDE2fHxpbnNpZGV8ZW58MHx8fHwxNjcwMzQyMTEx&ixlib=rb-4.0.3&q=80&w=1920",
+      imageUrl: "/Images/pexels-eva-bronzini-7605542.jpg",
       title: "Delicious Indian Cuisine",
       description: "Enjoy the best flavors from India!",
     },
     {
       id: 2,
-      imageUrl:
-        "https://images.unsplash.com/photo-1567518038075-d64f13e6e4c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDMyfHxpbnNpZGV8ZW58MHx8fHwxNjcwMzQyMTEx&ixlib=rb-4.0.3&q=80&w=1920",
+      imageUrl: "/Images/pexels-eva-bronzini-7605542.jpg",
       title: "Spicy Indian Delights",
       description: "Taste the spice of life!",
     },
     {
       id: 3,
-      imageUrl:
-        "https://images.unsplash.com/photo-1587656458652-c0c2b482fa7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDE3fHxpbnNpZGV8ZW58MHx8fHwxNjcwMzQyMTEx&ixlib=rb-4.0.3&q=80&w=1920",
+      imageUrl: "/Images/pexels-eva-bronzini-7605542.jpg",
       title: "Authentic Indian Flavors",
       description: "A taste of tradition!",
     },
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full h-[60vh]">
       <Slider {...settings}>
         {ads.map((ad) => (
           <div
             key={ad.id}
-            className="relative w-full h-[60vh] flex items-center justify-center bg-cover bg-center"
-            style={{ backgroundImage: `url(${ad.imageUrl})` }}
+            className="relative w-full h-full flex items-center justify-center bg-cover bg-center"
           >
-            <div className="p-5 md:p-10 w-full h-full text-white flex flex-col lg:flex-row items-center justify-between bg-black bg-opacity-50">
+            <div
+              style={{ backgroundImage: `url(${ad.imageUrl})` }}
+              className="p-5 md:p-10 w-full h-full text-white flex flex-col lg:flex-row items-center justify-between "
+            >
               {/* Left Side: Title and Description */}
               <div className="text-center lg:text-left lg:w-1/2 flex flex-col items-center justify-center">
                 <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-2">
@@ -57,7 +56,11 @@ const FullWidthCarousel = (props:any) => {
                 <h3 className="text-lg md:text-xl lg:text-4xl mb-4">
                   {ad.description}
                 </h3>
-                <Button className="mt-5 bg-purple-600 hover:bg-purple-800 text-white font-semibold py-2 px-4 rounded-lg transition-all">
+                <Button
+                  // variant="primary"
+                  size="lg"
+                  className="mt-5 bg-purple-600 hover:bg-purple-800 text-white font-semibold py-2 px-4 rounded-lg transition-all border-0"
+                >
                   Learn More
                 </Button>
               </div>

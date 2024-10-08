@@ -101,7 +101,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="bg-gradient-to-r from-indigo-600 to-yellow-600 text-white shadow-md sticky top-0 z-50">
+          <div className="bg-gradient-to-r from-pink-600 to-yellow-600 text-white shadow-md sticky top-0 z-50">
             <nav className="p-4 space-y-4 text-lg font-serif">
               <Link href="" className="block text-white hover:text-gray-300">
                 Home

@@ -6,6 +6,7 @@ import Listing from "../components/listing/listing";
 import {Menu} from "../helpers/dummy";
 import Footer from "../components/footer/footer";
 import Shopbycategory from "../components/shopbycategory/shopbycategory"
+import FloatingWhatsapp from "../components/floatingWhatsApp/floatingWhatsApp"
 
 export default function Home() {
   return (
@@ -13,8 +14,9 @@ export default function Home() {
     <div >
       <Header />
       <FullWidthCarousel />
-      <Shopbycategory/>
       <Listing menuItems={Menu} />
+      <Shopbycategory/>
+      <FloatingWhatsapp/>
       <Footer/>
       
     </div>

@@ -1,20 +1,26 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faInstagram,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
+import { useState, useEffect } from "react";
 
 const Footer = () => {
-  // const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setIsMobile(window.innerWidth < 768);
-  //   };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-  //   window.addEventListener('resize', handleResize);
-    
-  //   return () => window.removeEventListener('resize', handleResize);
-  // }, []);
+    // Set initial state
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <footer className="bg-gray-900 text-white py-10">
@@ -23,34 +29,25 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Tasty Indian Cuisine</h3>
           <p className="text-gray-400">
-            We bring you the best flavors of India with our curated selection of authentic Indian dishes.
+            We bring you the best flavors of India with our curated selection of
+            authentic Indian dishes.
           </p>
         </div>
 
         {/* Quick Links */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2 ">
-            <li>
-              <Link href="" className="hover:font-bold font-sans hover:text-orange-400 hover:underline transition-all">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="" className="hover:font-bold font-sans hover:text-orange-400 hover:underline transition-all">
-                Menu
-              </Link>
-            </li>
-            <li>
-              <Link href="" className="hover:font-bold font-sans hover:text-orange-400 hover:underline transition-all">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="" className="hover:font-bold font-sans  hover:text-orange-400 hover:underline transition-all">
-                Contact
-              </Link>
-            </li>
+          <ul className="space-y-2">
+            {["Home", "Menu", "About Us", "Contact"].map((link, index) => (
+              <li key={index}>
+                <Link
+                  href=""
+                  className="hover:font-bold font-sans hover:text-orange-400 hover:underline transition-all"
+                >
+                  {link}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -58,15 +55,18 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-4">
-            <Link href="https://www.facebook.com" target="_blank">
-              <FontAwesomeIcon icon={faFacebookF} className="text-2xl hover:text-blue-400 transition-all" />
-            </Link>
-            <Link href="https://www.instagram.com" target="_blank">
-              <FontAwesomeIcon icon={faInstagram} className="text-2xl hover:text-pink-400 transition-all" />
-            </Link>
-            <Link href="https://www.whatsapp.com" target="_blank">
-              <FontAwesomeIcon icon={faWhatsapp} className="text-2xl hover:text-green-400 transition-all" />
-            </Link>
+            {[
+              { icon: faFacebookF, color: "blue-400", href: "https://www.facebook.com" },
+              { icon: faInstagram, color: "pink-400", href: "https://www.instagram.com" },
+              { icon: faWhatsapp, color: "green-400", href: "https://www.whatsapp.com" },
+            ].map((social, index) => (
+              <Link href={social.href} key={index} target="_blank">
+                <FontAwesomeIcon
+                  icon={social.icon}
+                  className={`text-2xl hover:text-${social.color} transition-all`}
+                />
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -76,13 +76,15 @@ const Footer = () => {
           <p className="text-gray-400 mb-4">
             Subscribe to get the latest updates and offers!
           </p>
-          <form className="flex flex-col md:flex-row">
+          <form className="flex flex-col md:flex-row w-full">
             <input
               type="email"
               placeholder="Enter your email"
-              className={false ? "w-full px-3 py-2 mb-2 rounded-lg text-gray-800 focus:outline-none": "w-full px-3 py-2 rounded-lg  md:mb-0 md:rounded-l-lg md:rounded-none text-gray-800 focus:outline-none"}
+              className="w-full px-3 py-2 rounded-lg md:rounded-none md:rounded-l-lg text-gray-800 focus:outline-none"
             />
-            <button className={false ? "bg-yellow-500 px-3 py-2 rounded-lg hover:bg-yellow-600 w-full md:w-auto": "bg-yellow-500 px-3 py-2 rounded-lg md:rounded-r-lg md:rounded-none hover:bg-yellow-600 w-full md:w-auto"}>
+            <button
+              className={`bg-yellow-500 px-3 py-2 rounded-lg md:rounded-none md:rounded-r-lg hover:bg-yellow-600 w-full md:w-auto ${isMobile ? "mt-2" : ""}`}
+            >
               Subscribe
             </button>
           </form>
@@ -90,7 +92,8 @@ const Footer = () => {
       </div>
 
       <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400 font-sans">
-        &copy; {new Date().getFullYear()} Tasty Indian Cuisine. All rights reserved.
+        &copy; {new Date().getFullYear()} Tasty Indian Cuisine. All rights
+        reserved.
       </div>
     </footer>
   );

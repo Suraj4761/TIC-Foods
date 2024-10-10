@@ -61,77 +61,12 @@ const ShopByCategory = () => {
       link: '/category/indian-bread',
     },
     {
-      id: 1,
-      imageUrl: 'https://5.imimg.com/data5/ANDROID/Default/2023/12/365067276/VY/MR/WL/87740306/product-jpeg-500x500.jpg',
-      title: 'Rice Base Product',
-      link: '/category/rice-products',
-    },
-    {
-      id: 2,
-      imageUrl: 'https://www.kitchensanctuary.com/wp-content/uploads/2021/07/Curry-Base-Gravy-square-FS-43.jpg',
-      title: 'Curry Base Product',
-      link: '/category/curry-products',
-    },
-    {
-      id: 3,
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8fomiIL4J5n15SWmPaq240ZLnKF6blEN6lg&s',
-      title: 'Curry Mix',
-      link: '/category/curry-mix',
-    },
-    {
-      id: 4,
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqUsz76CoDozZZ7TTgqNeWcuR1Wxkjo3IAMw&s',
-      title: 'Indian Bread',
+      id: 5,
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTJYASuoZIfNynvfs8cavAcYCVxxD7AwgxRA&s',
+      title: 'Indian Curry',
       link: '/category/indian-bread',
     },
-    {
-      id: 1,
-      imageUrl: 'https://5.imimg.com/data5/ANDROID/Default/2023/12/365067276/VY/MR/WL/87740306/product-jpeg-500x500.jpg',
-      title: 'Rice Base Product',
-      link: '/category/rice-products',
-    },
-    {
-      id: 2,
-      imageUrl: 'https://www.kitchensanctuary.com/wp-content/uploads/2021/07/Curry-Base-Gravy-square-FS-43.jpg',
-      title: 'Curry Base Product',
-      link: '/category/curry-products',
-    },
-    {
-      id: 3,
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8fomiIL4J5n15SWmPaq240ZLnKF6blEN6lg&s',
-      title: 'Curry Mix',
-      link: '/category/curry-mix',
-    },
-    {
-      id: 4,
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqUsz76CoDozZZ7TTgqNeWcuR1Wxkjo3IAMw&s',
-      title: 'Indian Bread',
-      link: '/category/indian-bread',
-    },
-    {
-      id: 1,
-      imageUrl: 'https://5.imimg.com/data5/ANDROID/Default/2023/12/365067276/VY/MR/WL/87740306/product-jpeg-500x500.jpg',
-      title: 'Rice Base Product',
-      link: '/category/rice-products',
-    },
-    {
-      id: 2,
-      imageUrl: 'https://www.kitchensanctuary.com/wp-content/uploads/2021/07/Curry-Base-Gravy-square-FS-43.jpg',
-      title: 'Curry Base Product',
-      link: '/category/curry-products',
-    },
-    {
-      id: 3,
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8fomiIL4J5n15SWmPaq240ZLnKF6blEN6lg&s',
-      title: 'Curry Mix',
-      link: '/category/curry-mix',
-    },
-    {
-      id: 4,
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqUsz76CoDozZZ7TTgqNeWcuR1Wxkjo3IAMw&s',
-      title: 'Indian Bread',
-      link: '/category/indian-bread',
-    },
+    
     
   ];
 

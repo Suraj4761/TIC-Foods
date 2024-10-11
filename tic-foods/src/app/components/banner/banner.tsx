@@ -58,8 +58,10 @@ const FullWidthCarousel = (props: any) => {
                 </h3>
                 <Button
                   // variant="primary"
+                  onClick={()=>{}}
+                  style={{backgroundColor:"purple",border:"0",margin:"10px"}}
                   size="lg"
-                  className="mt-5 bg-purple-600 hover:bg-purple-800 text-white font-semibold py-2 px-4 rounded-lg transition-all border-0"
+                  // className="mt-5 mb-3 bg-purple-600 hover:bg-purple-800 text-white font-semibold py-2 px-4 rounded-lg transition-all border-0"
                 >
                   Learn More
                 </Button>

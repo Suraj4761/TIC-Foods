@@ -86,7 +86,7 @@ const ShopByCategory = () => {
                     height: '6rem',  // Set height to 6rem for smaller size
                   }}>
                 </div>
-                <h1 className="text-lg font-sans text-center py-2 transition-colors duration-300 hover:text-orange-500 hover:underline">
+                <h1 className="text-lg font-sans text-center py-2 transition-colors duration-300 hover:text-orange-500 hover:underline hover:font-bold">
                   {category.title}
                 </h1>
               </div>

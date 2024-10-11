@@ -1,146 +1,115 @@
 import React, { useState } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
-import { Button } from "react-bootstrap";
+import { Menu } from '../../helpers/dummy';
+import {
+  Container,
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  Button,
+  IconButton,
+} from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-const Listing = (props: any) => {
-  const { menuItems } = props;
+const FoodListing = () => {
+  const [menuItems, setMenuItems] = useState(Menu);
 
-  const [toggleStates, setToggleStates] = useState<boolean[]>(
-    Array(menuItems.length).fill(false) // Initialize all to false
-  );
-
-  const handleToggle = (index: number) => {
-    // Create a new array with updated toggle value at the specific index
-    const newToggleStates = [...toggleStates];
-    newToggleStates[index] = !newToggleStates[index]; // Toggle the value at the given index
-    setToggleStates(newToggleStates); // Update state
+  const toggleLike = (index: number) => {
+    const updatedItems = [...menuItems];
+    updatedItems[index].liked = !updatedItems[index].liked;
+    setMenuItems(updatedItems);
   };
 
   return (
-    <>
-      {/* Animated Scroll Listing */}
-      <div className="bg-white bg-opacity-50 py-10">
-        <h2 className="text-center text-3xl font-bold font-serif mb-10 mt-10 text-orange-500">
-          Our Products
-        </h2>
-
-        <div className="flex flex-wrap justify-center">
-          {menuItems.map((item: any, index: number) => (
-            <div
-              key={index}
-              className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-4 animate-scroll"
-              style={{ animationDelay: `${index * 0.2}s` }}
+    <Container sx={{ py: 5 }}>
+      <h2 className="text-center text-3xl font-bold font-serif mb-10 mt-20 text-orange-500">Explore Our Menu</h2>
+      <Grid container spacing={2}>
+        {menuItems.map((item, index) => (
+          <Grid item xs={6} sm={6} md={4} lg={3} key={index + 1}>
+            <Card
+              sx={{
+                position: "relative",
+                height: '100%', // Ensure card takes full height of the grid item
+                display: 'flex',
+                flexDirection: 'column',
+                border: "1px solid rgba(0, 0, 0, 0.12)",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                '&:hover': {
+                  transform: "scale(1.05)",
+                  boxShadow: "0 12px 24px rgba(0, 0, 0, 0.2)",
+                  backgroundColor: "rgba(255, 165, 0, 0.1)",
+                },
+              }}
             >
-              <Card className="ms-4 shadow-lg rounded-lg overflow-hidden transform transition-all hover:scale-105 relative group">
-                <div
-                  style={{ position: "absolute", top: "0", right: "0" }}
-                  className="mb-5"
+              <IconButton
+                onClick={() => toggleLike(index)}
+                sx={{
+                  position: "absolute",
+                  top: 10,
+                  right: 10,
+                  backgroundColor: "white",
+                }}
+              >
+                {item.liked ? (
+                  <FavoriteIcon color="error" />
+                ) : (
+                  <FavoriteBorderIcon />
+                )}
+              </IconButton>
+              <CardMedia
+                component="img"
+                height="140"
+                image={item.image}
+                alt={item.title}
+              />
+              <CardContent
+                sx={{
+                  flexGrow: 1, // Ensures that the content stretches to fill the card
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between", // Distribute content evenly
+                  height: '100%',
+                }}
+              >
+                <Typography variant="h6" sx={{ color: '#FF5722', fontWeight: 'bold', fontFamily: 'Arial' }}>
+                  {item.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ fontStyle: 'sans', fontFamily: 'Georgia' }}>
+                  {item.description}
+                </Typography>
+                <Typography variant="h6" sx={{ mt: 2, color: '#4CAF50', fontFamily: 'Arial', fontWeight: 'bold' }}>
+                  ${item.price}
+                </Typography>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    mt: 2,
+                    mv:2,
+                    backgroundColor:'orange',
+                    width: '100%', // Full width by default
+                    fontSize: '14px', // Smaller font size for all screens
+                    whiteSpace: 'nowrap', // Prevent text wrapping
+                    '@media (max-width: 700px)': {
+                      width: '80%', // Adjust width on mobile
+                      fontSize: '11px', // Even smaller font on mobile
+                      alignSelf: 'center', // Center button horizontally
+                    },
+                  }}
+                  onClick={() => alert(`Added ${item.title} to cart`)}
                 >
-                  {/* Button with index-based toggle state */}
-                  <Button
-                    className="border-0"
-                    variant="bg-color white"
-                    onClick={() => handleToggle(index)} // Handle toggle for the specific index
-                  >
-                    {/* Use toggle state specific to this index */}
-                    {toggleStates[index] ? (
-                      <img src="/Images/red-30.png" alt="red icon" />
-                    ) : (
-                      <img
-                        src="/Images/icons8-favorite-30.png"
-                        alt="favorite icon"
-                      />
-                    )}
-                  </Button>
-                </div>
-                <Card.Img
-                  variant="top"
-                  src={item.image}
-                  className="mt-3 w-full h-50 object-cover"
-                />
-
-                <Card.Body className="p-4 flex flex-col justify-between h-[calc(100%-12rem)]">
-                  <div>
-                    <Card.Title className="text-green-600 font-sans text-2xl">
-                      {item.title}
-                    </Card.Title>
-                    <Card.Text className="text-gray-700 mt-2 line-clamp-3 font-sans">
-                      {item.description}
-                    </Card.Text>
-                  </div>
-                </Card.Body>
-
-                <ListGroup className="list-group-flush">
-                  <ListGroup.Item className="flex justify-between items-center">
-                    <span className="text-xl font-bold">$ {item.price}</span>
-                    <Button className="mb-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-all opacity-100 duration-0 border border-orange-500">
-                      Add To Cart
-                    </Button>
-                  </ListGroup.Item>
-                </ListGroup>
-              </Card>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* CSS Animations */}
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        @keyframes slideIn {
-          from {
-            transform: translateY(-20px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        @keyframes bounce {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-        @keyframes scroll {
-          from {
-            transform: translateY(50px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 1s ease forwards;
-        }
-        .animate-slideIn {
-          animation: slideIn 0.5s ease forwards;
-        }
-        .animate-bounce {
-          animation: bounce 1s infinite;
-        }
-        .animate-scroll {
-          animation: scroll 0.5s ease forwards;
-        }
-      `}</style>
-    </>
+                  Add to Cart
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
 };
 
-export default Listing;
+export default FoodListing;

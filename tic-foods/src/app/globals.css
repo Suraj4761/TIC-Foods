@@ -26,3 +26,36 @@ body {
     text-wrap: balance;
   }
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.img-fluid {
+  object-fit: cover;
+  height: 200px; /* Adjust as needed */
+}
+
+
+h-100 {
+  height: 100%;
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+
+.card {
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 576px) {
+  .card {
+    margin-bottom: 10px;
+  }
+}

@@ -9,11 +9,24 @@ import Shopbycategory from "../components/shopbycategory/shopbycategory"
 import FloatingWhatsapp from "../components/floatingWhatsApp/floatingWhatsApp"
 import '../globals.css';  // Custom CSS (if needed)
 import Features from "../components/Features/Features";
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Home() {
   return (
 
-    <div >
+    <div style={{ overflow: 'hidden' }}>
+       <ToastContainer
+                      position="top-right"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="success"
+                      />
       <Header />
       <FullWidthCarousel />
       <Listing />
@@ -22,7 +35,6 @@ export default function Home() {
       <Shopbycategory/>
       <FloatingWhatsapp/>
       <Footer/>
-
     </div>
   );
 }

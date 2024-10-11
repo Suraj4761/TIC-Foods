@@ -34,7 +34,7 @@ const Listing = (props: any) => {
               className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-4 animate-scroll"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <Card className="ms-4 shadow-lg rounded-lg overflow-hidden transform transition-all hover:scale-105 relative group">
+              <Card className="ms-4 me-2 shadow-lg rounded-lg overflow-hidden transform transition-all hover:scale-105 relative group">
                 <div
                   style={{ position: "absolute", top: "0", right: "0" }}
                   className="mb-5"
@@ -76,7 +76,9 @@ const Listing = (props: any) => {
                 <ListGroup className="list-group-flush">
                   <ListGroup.Item className="flex justify-between items-center">
                     <span className="text-xl font-bold">$ {item.price}</span>
-                    <Button className="mb-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-all opacity-100 duration-0 border border-orange-500">
+                    <Button style={{backgroundColor:"orange",border:"0",padding:"10px",width:"150px"}}
+                    // className="mb-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg duration-0 border border-0 focus:outline-none focus:ring-0 focus:bg-orange-500 active:bg-orange-500"
+                    >
                       Add To Cart
                     </Button>
                   </ListGroup.Item>

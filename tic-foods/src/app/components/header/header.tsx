@@ -82,16 +82,16 @@ const Header = () => {
             </div>
 
             {/* Icons for Search, Login, Wishlist, Cart */}
-            <Link href="" className="hover:text-orange-600">
+            <Link href="javascript:void(0)" className="hover:text-orange-600">
               <MagnifyingGlassIcon className="w-5 h-5 hover:stroke-[2.5] cursor-pointer" />
             </Link>
-            <Link href="" className="hover:text-orange-600">
+            <Link href="javascript:void(0)" className="hover:text-orange-600">
               <UserIcon className="w-5 h-5 hover:stroke-[2.5] cursor-pointer" />
             </Link>
-            <Link href="" className="hover:text-orange-600">
+            <Link href="javascript:void(0)" className="hover:text-orange-600">
               <HeartIcon className="w-5 h-5 hover:stroke-[2.5] cursor-pointer" />
             </Link>
-            <Link href="" className="hover:text-orange-600">
+            <Link href="javascript:void(0)" className="hover:text-orange-600">
               <ShoppingCartIcon className="w-5 h-5 hover:stroke-[2.5] cursor-pointer" />
             </Link>
           </div>

@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,6 +7,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { Button } from "react-bootstrap";
 
 const Listing = (props: any) => {
+  console.log("🚀 ~ Listing ~ props:====", props)
   const { menuItems } = props;
 
   const [toggleStates, setToggleStates] = useState<boolean[]>(

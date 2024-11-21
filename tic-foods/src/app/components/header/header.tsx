@@ -44,7 +44,7 @@ const Header = () => {
               Home
             </Link>
             <Link
-              href=""
+              href="shop"
               className="hover:text-gray-300 hover:underline font-medium"
             >
               Shop

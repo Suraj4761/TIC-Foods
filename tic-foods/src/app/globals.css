@@ -26,3 +26,334 @@ body {
     text-wrap: balance;
   }
 }
+
+/* margin top Css */
+.mt-10 {
+  margin-top: 10rem;
+}
+.mt-9 {
+  margin-top: 9rem;
+}
+.mt-8 {
+  margin-top: 8rem;
+}
+.mt-7 {
+  margin-top: 7rem;
+}
+.mt-6 {
+  margin-top: 6rem;
+}
+
+/* padding right css */
+
+.pr-6 {
+  padding-right: 6rem;
+}
+.pr-7 {
+  padding-right: 7rem;
+}
+.pr-8 {
+  padding-right: 8rem;
+}
+.pr-9 {
+  padding-right: 9rem;
+}
+.pr-10 {
+  padding-right: 10rem;
+}
+
+/* Padding left CSS */
+
+.pl-6 {
+  padding-left: 6rem;
+}
+.pl-7 {
+  padding-left: 7rem;
+}.pl-8 {
+  padding-left: 8rem;
+}.pl-9 {
+  padding-left: 9rem;
+}.pl-10 {
+  padding-left: 10rem;
+}
+
+/* Padding top Css */
+
+.pt-6 {
+  padding-top: 6rem;
+}
+.pt-7 {
+  padding-top: 7rem;
+}.pt-8 {
+  padding-top: 8rem;
+}.pt-9 {
+  padding-top: 9rem;
+}.pt-10 {
+  padding-top: 10rem;
+}
+
+/* Padding Bottom CSS */
+
+.pb-6 {
+  padding-bottom: 6rem;
+}
+.pb-7 {
+  padding-bottom: 7rem;
+}.pb-8 {
+  padding-bottom: 8rem;
+}.pb-9 {
+  padding-bottom: 9rem;
+}.pb-10 {
+  padding-bottom: 10rem;
+}
+
+.filter-card {
+  border-radius: 32px; /* Increased border radius */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+}
+.button-group {
+  max-width: 13rem;
+  color: white;
+background-color: orange;
+/* border-color: #0a0a0a; */
+border: 0%;
+
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-item {
+  width: 100%; /* Full width on small screens */
+}
+
+@media (min-width: 576px) {
+  .card-item {
+    width: 50%; /* 2 cards per row on small-medium screens */
+  }
+}
+
+@media (min-width: 768px) {
+  .card-item {
+    width: 33.33%; /* 3 cards per row on medium screens */
+  }
+}
+
+/* Optional: Adjust card size for larger screens if necessary */
+@media (min-width: 1200px) {
+  .card-item {
+    width: 33.33%; /* Keep 3 cards per row on larger screens */
+  }
+}
+  
+
+/* sortttt*/
+
+/* Container to position the select box */
+.custom-select-container {
+  position: relative;
+  width: 100%; /* Ensure the container is responsive */
+  max-width: 250px; /* Set max-width to ensure it doesn't stretch too wide */
+  margin-top: 10px;
+}
+
+/* Flexbox for aligning label and select dropdown horizontally */
+.d-flex {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center; /* Vertically center the items */
+}
+
+/* Style the custom select box */
+.custom-select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  background-color: #fff;
+  border: none; /* Removed the border */
+  border-radius: 10px;
+  appearance: none; /* Hide the default dropdown arrow */
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 10px rgba(255, 165, 0, 0.2); /* Added subtle orange shadow to the bottom */
+}
+
+/* Hover and focus states for the select box */
+.custom-select:hover,
+.custom-select:focus {
+  box-shadow: 0 4px 10px rgba(255, 165, 0, 0.3); /* Slightly stronger orange shadow on hover/focus */
+  background-color: #f8f9fa;
+}
+
+/* Custom dropdown arrow */
+.custom-select__indicator {
+  color: #6c757d;
+}
+
+/* Remove the default separator and style the dropdown indicator */
+.custom-select__indicator-separator {
+  display: none;
+}
+
+.custom-select__dropdown-indicator {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Custom arrow icon styles */
+.custom-select__dropdown-indicator > svg {
+  width: 20px;
+  height: 20px;
+  fill: #6c757d;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate the arrow on hover or focus */
+.custom-select:hover .custom-select__dropdown-indicator > svg,
+.custom-select:focus .custom-select__dropdown-indicator > svg {
+  transform: rotate(180deg); /* Rotate the arrow */
+}
+
+/* Responsive design: adjust select box for smaller screens */
+@media (max-width: 768px) {
+  .custom-select-container {
+    max-width: 200px; /* Reduce width on smaller screens */
+  }
+
+  .custom-select {
+    font-size: 0.9rem; /* Slightly smaller font size */
+    padding: 10px 14px; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Optional: Style the label to make it cleaner and more modern */
+label {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* General Styles */
+.custom-select-container {
+  position: relative;
+  width: 100%; /* Ensure the container is responsive */
+  max-width: 250px; /* Set max-width to ensure it doesn't stretch too wide */
+  margin-top: 10px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-item {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-item .card {
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-item .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+/* Adjust the card image on hover */
+.card-item .card .card-img {
+  transition: transform 0.3s ease;
+}
+
+.card-item .card:hover .card-img {
+  transform: scale(1.1);
+}
+
+/* Header and Filter responsiveness */
+@media (max-width: 768px) {
+  .mt-5 {
+    margin-top: 2rem;
+  }
+
+  .d-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .custom-select-container {
+    max-width: 200px; /* Adjust width for smaller screens */
+    margin-top: 0;
+  }
+
+  .card-item {
+    width: 100%; /* Ensure cards take full width on smaller screens */
+    padding: 0.5rem;
+  }
+
+  .card-container {
+    justify-content: center;
+  }
+
+  .ms-4 {
+    margin-left: 0;
+  }
+
+  .me-5 {
+    margin-right: 0;
+  }
+}
+
+/* Medium screens (Tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .custom-select-container {
+    max-width: 200px; /* Reduce width slightly for tablets */
+  }
+
+  .card-item {
+    width: 48%; /* Display 2 cards per row */
+    margin-bottom: 2rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .card-item {
+    width: 30%; /* Display 3 cards per row */
+  }
+}
+
+/* Extra Large screens (desktops) */
+@media (min-width: 1440px) {
+  .card-item {
+    width: 30%; /* Maintain 3 cards per row for large screens */
+  }
+
+  .custom-select-container {
+    max-width: 300px; /* Allow select dropdown to be wider */
+  }
+}
+
+/* Ensure equal height for both columns */
+.row {
+  display: flex;
+  align-items: stretch; /* Stretch both columns to the same height */
+}
+
+/* Ensure columns take full height */
+.col {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ensure each column grows to take full height */
+}

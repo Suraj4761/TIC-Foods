@@ -26,3 +26,37 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.customer-reviews {
+  text-align: center;
+  padding: 20px;
+}
+
+.review-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stars {
+  font-size: 24px;
+  color: #f0c14b; /* Adjust color as needed */
+}
+
+.write-review-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}

@@ -31,16 +31,15 @@ const FoodDescription = ({
   const reviewsRef = useRef<HTMLDivElement>(null);
 
   const settings = {
-    
-        dots: true,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 2000,
-        cssEase: "linear",
-      
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+
     responsive: [
       {
         breakpoint: 1024,
@@ -63,45 +62,6 @@ const FoodDescription = ({
     ],
   };
 
-  // State for current slide index
-
-  // Duplicate the first few products to create the loop effect
-  //   const loopedProducts = [...Products, ...Products.slice(0, 4)];
-
-  //   const [currentIndex, setCurrentIndex] = useState(0);
-  //   // Set up automatic sliding
-  //   // Set up automatic sliding
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       setCurrentIndex((prevIndex) => {
-  //         if (prevIndex === Products.length - 1) {
-  //           return 0; // Reset to 0 when it reaches the end
-  //         }
-  //         return prevIndex + 1;
-  //       });
-  //     }, 3000); // Change slide every 3 seconds
-
-  //     return () => clearInterval(interval); // Clean up interval on unmount
-  //   }, [Products.length]);
-
-  //   const handlePrev = () => {
-  //     setCurrentIndex((prevIndex) => {
-  //       if (prevIndex === 0) {
-  //         return Products.length - 1; // Loop back to the last slide
-  //       }
-  //       return prevIndex - 1;
-  //     });
-  //   };
-
-  //   const handleNext = () => {
-  //     setCurrentIndex((prevIndex) => {
-  //       if (prevIndex === Products.length - 1) {
-  //         return 0; // Reset to the first slide
-  //       }
-  //       return prevIndex + 1;
-  //     });
-  //   };
-  // Handle tab change and scroll
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
     if (tab === "description" && descriptionRef.current) {

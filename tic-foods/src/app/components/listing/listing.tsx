@@ -40,7 +40,7 @@ const Listing = (props: any) => {
             >
               <Card
                 onClick={() => handleCardClick(item)}
-                className="ms-4 me-2 shadow-lg rounded-lg overflow-hidden transform transition-all hover:scale-105 relative group"
+                className="ms-4 me-2 shadow-lg rounded-lg overflow-hidden transform transition-all hover:scale-105 relative group cursor-pointer"
               >
                 <div
                   style={{ position: "absolute", top: "0", right: "0" }}

@@ -32,6 +32,61 @@ const Footer = () => {
             We bring you the best flavors of India with our curated selection of
             authentic Indian dishes.
           </p>
+
+           {/* Social Media */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
+          <div className="flex space-x-4">
+            {[
+              {
+                icon: faFacebookF,
+                color: "blue-400",
+                href: "https://www.facebook.com",
+              },
+              {
+                icon: faInstagram,
+                color: "pink-400",
+                href: "https://www.instagram.com",
+              },
+              {
+                icon: faWhatsapp,
+                color: "green-400",
+                href: "https://www.whatsapp.com",
+              },
+            ].map((social, index) => (
+              <Link href={social.href} key={index} target="_blank">
+                <FontAwesomeIcon
+                  icon={social.icon}
+                  className={`text-2xl hover:text-${social.color} transition-all`}
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
+        </div>
+
+        {/* Categories */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Categories</h3>
+          <ul className="space-y-2">
+            {[
+              "Breakfast",
+              "Curry / Dal",
+              "Rice",
+              "Jain",
+              "Sweet / Dessert",
+              "QB Bundle",
+            ].map((category, index) => (
+              <li key={index}>
+                <Link
+                  href={`/${category.toLowerCase().replace(/ |\/|\s+/g, "-")}`} // Convert titles to URL-friendly links
+                  className="hover:font-bold font-sans hover:text-orange-400 hover:underline transition-all"
+                >
+                  {category}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Quick Links */}
@@ -51,43 +106,27 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Social Media */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
-          <div className="flex space-x-4">
-            {[
-              { icon: faFacebookF, color: "blue-400", href: "https://www.facebook.com" },
-              { icon: faInstagram, color: "pink-400", href: "https://www.instagram.com" },
-              { icon: faWhatsapp, color: "green-400", href: "https://www.whatsapp.com" },
-            ].map((social, index) => (
-              <Link href={social.href} key={index} target="_blank">
-                <FontAwesomeIcon
-                  icon={social.icon}
-                  className={`text-2xl hover:text-${social.color} transition-all`}
-                />
-              </Link>
-            ))}
-          </div>
-        </div>
+       
 
-        {/* Newsletter */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Newsletter</h3>
-          <p className="text-gray-400 mb-4">
-            Subscribe to get the latest updates and offers!
-          </p>
-          <form className="flex flex-col md:flex-row w-full">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full px-3 py-2 rounded-lg md:rounded-none md:rounded-l-lg text-gray-800 focus:outline-none"
-            />
-            <button
-              className={`bg-yellow-500 px-3 py-2 rounded-lg md:rounded-none md:rounded-r-lg hover:bg-yellow-600 w-full md:w-auto ${isMobile ? "mt-2" : ""}`}
-            >
-              Subscribe
-            </button>
-          </form>
+          <h3 className="text-xl font-semibold mb-4">Customer Services</h3>
+          <ul className="space-y-2">
+            {[
+              "Consumer Policy",
+              "Privacy Policy",
+              "Terms & Conditions",
+              "Shipping Policy",
+            ].map((link, index) => (
+              <li key={index}>
+                <Link
+                  href={`/${link.toLowerCase().replace(/ & | /g, "-")}`} // Convert titles to URL-friendly links
+                  className="hover:font-bold font-sans hover:text-orange-400 hover:underline transition-all"
+                >
+                  {link}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

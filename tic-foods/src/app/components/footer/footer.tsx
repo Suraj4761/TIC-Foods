@@ -24,7 +24,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-white py-10">
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-8 font-sans">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8 px-6 md:px-12 font-sans">
         {/* Company Information */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Tasty Indian Cuisine</h3>
@@ -33,36 +33,36 @@ const Footer = () => {
             authentic Indian dishes.
           </p>
 
-           {/* Social Media */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
-          <div className="flex space-x-4">
-            {[
-              {
-                icon: faFacebookF,
-                color: "blue-400",
-                href: "https://www.facebook.com",
-              },
-              {
-                icon: faInstagram,
-                color: "pink-400",
-                href: "https://www.instagram.com",
-              },
-              {
-                icon: faWhatsapp,
-                color: "green-400",
-                href: "https://www.whatsapp.com",
-              },
-            ].map((social, index) => (
-              <Link href={social.href} key={index} target="_blank">
-                <FontAwesomeIcon
-                  icon={social.icon}
-                  className={`text-2xl hover:text-${social.color} transition-all`}
-                />
-              </Link>
-            ))}
+          {/* Social Media */}
+          <div className="mt-6">
+            <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
+            <div className="flex space-x-6">
+              {[
+                {
+                  icon: faFacebookF,
+                  color: "blue-400",
+                  href: "https://www.facebook.com",
+                },
+                {
+                  icon: faInstagram,
+                  color: "pink-400",
+                  href: "https://www.instagram.com",
+                },
+                {
+                  icon: faWhatsapp,
+                  color: "green-400",
+                  href: "https://www.whatsapp.com",
+                },
+              ].map((social, index) => (
+                <Link href={social.href} key={index} target="_blank">
+                  <FontAwesomeIcon
+                    icon={social.icon}
+                    className={`text-2xl hover:text-${social.color} transition-all`}
+                  />
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
         </div>
 
         {/* Categories */}
@@ -79,7 +79,7 @@ const Footer = () => {
             ].map((category, index) => (
               <li key={index}>
                 <Link
-                  href={`/${category.toLowerCase().replace(/ |\/|\s+/g, "-")}`} // Convert titles to URL-friendly links
+                  href={`/${category.toLowerCase().replace(/ |\/|\s+/g, "-")}`}
                   className="hover:font-bold font-sans hover:text-orange-400 hover:underline transition-all"
                 >
                   {category}
@@ -106,8 +106,7 @@ const Footer = () => {
           </ul>
         </div>
 
-       
-
+        {/* Customer Services */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Customer Services</h3>
           <ul className="space-y-2">
@@ -119,7 +118,7 @@ const Footer = () => {
             ].map((link, index) => (
               <li key={index}>
                 <Link
-                  href={`/${link.toLowerCase().replace(/ & | /g, "-")}`} // Convert titles to URL-friendly links
+                  href={`/${link.toLowerCase().replace(/ & | /g, "-")}`}
                   className="hover:font-bold font-sans hover:text-orange-400 hover:underline transition-all"
                 >
                   {link}

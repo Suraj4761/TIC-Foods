@@ -28,19 +28,19 @@ body {
 }
 
 /* margin top Css */
-.mt-10 {
+.mt-10css {
   margin-top: 10rem;
 }
 .mt-9 {
   margin-top: 9rem;
 }
-.mt-8 {
+.mt-8-rem {
   margin-top: 8rem;
 }
 .mt-7 {
   margin-top: 7rem;
 }
-.mt-6 {
+.mt-6rem {
   margin-top: 6rem;
 }
 
@@ -79,7 +79,7 @@ body {
 
 /* Padding top Css */
 
-.pt-6 {
+.pt-6-rem {
   padding-top: 6rem;
 }
 .pt-7 {
@@ -389,4 +389,104 @@ label {
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
+}
+
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.filterSection {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.customDropdown {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.slider {
+  margin-top: 10px;
+}
+
+.clearButton {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #ff6f61;
+  color: white;
+}
+
+.listingSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cardWrapper {
+  width: calc(25% - 20px);
+  margin: 10px;
+  animation: fadeIn 0.5s;
+  cursor: pointer;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cardTitle {
+  color: #28a745;
+  font-size: 20px;
+}
+
+.cardText {
+  color: #6c757d;
+  margin: 10px 0;
+}
+
+.listGroupItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.addToCartButton {
+  background-color: orange;
+  border: none;
+  padding: 10px 20px;
+}
+
+.favoriteIconWrapper {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.favoriteButton {
+  padding: 0;
 }

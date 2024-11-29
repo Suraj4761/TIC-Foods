@@ -3,11 +3,10 @@
 import Header from "../components/header/header"
 import FullWidthCarousel from '../components/banner/banner'
 import Listing from "../components/listing/listing";
-import Listingnew from "../components/listing/newListing";
+import Listingnew from "../components/Features/Features";
 import Footer from "../components/footer/footer";
 import Shopbycategory from "../components/shopbycategory/shopbycategory"
 import FloatingWhatsapp from "../components/floatingWhatsApp/floatingWhatsApp"
-import Shopping from "../shop/page";
 import { Menu } from "../helpers/dummy";
 
 export default function Home() {
@@ -17,9 +16,10 @@ export default function Home() {
       <Header />
       <FullWidthCarousel />
       <Listing menuItems={Menu} />
-      {/* <Shopping products={Menu}/> */}
+      <Listingnew />
       <Shopbycategory/>
       <FloatingWhatsapp/>
+      {/* <Shopping menuItems={Menu} /> */}
       <Footer/>
 
     </div>
